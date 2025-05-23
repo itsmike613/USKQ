@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="U.S Knowledge Quotient Test" property="og:title">
+    <meta content="Test your knowledge with this quiz!" property="og:description">
+    <meta content="https://itsmike613.github.io/USKQ/" property="og:url">
+    <meta content="https://github.com/itsmike613/USKQ/blob/main/Assets/Images/logo.png?raw=true" property="og:image">
+    <meta content="#0A3161" data-react-helmet="true" name="theme-color">
+
+    <!-- Tab -->
+    <link rel="icon" type="image/x-icon" href="Assets/Images/logo.png">
+    <title>U.S Knowledge Quotient Test</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="Assets/Styles/index.css">
+
+    <!--
+
+    TODO
+    - Toggle partial credit for scoring before Start
+    - Toggle images for options before start
+
+    -->
+</head>
+
+<body>
+    <div id="start-screen">
+        <h2>U.S. Knowledge Quotient Test</h2>
+        <p>Test your knowledge on U.S. history. Earn your USKQ score and see how you perform in different categories.</p>
+        <hr>
+        <p><strong>About this test:</strong></p>
+        <ul>
+            <li><strong>Categories:</strong> U.S. Presidents, World Wars, U.S. Constitution, Civics, Historical Dates</li>
+            <li><strong>Questions:</strong> 13 (more, coming soon)</li>
+            <li><strong>Estimated Time:</strong> 4–7 minutes (real est. after tests, coming soon)</li>
+            <li><strong>Average Score:</strong> ~620 USKQ (real avg. after tests, coming soon)</li>
+        </ul>
+        <p><strong>How it works:</strong></p>
+        <ul>
+            <li>Click <strong>Start Test</strong> to begin.</li>
+            <li>You must select an option to proceed to the next question.</li>
+            <li>Once submitted, answers are locked. You can retry the test afterward.</li>
+            <li>After submission, you'll see correct answers, explanations, and a detailed category breakdown.</li>
+        </ul>
+        <p><strong>Scoring:</strong> Each option has a weight. Closer answers earn partial credit. Final USKQ Score (0–1000) averages your performance across all categories.</p>
+
+        <button onclick="startTest()">Start Test</button>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+        <div id="question-container"></div>
+        <button id="back-button" onclick="prevQuestion()">Back</button>
+        <button id="next-button" onclick="nextQuestion()" disabled>Next</button>
+    </div>
+
+    <div id="result-screen" class="hidden">
+        <h2>Your Results</h2>
+        <p><strong>USKQ Score:</strong> <span id="uskq-score"></span>/1000</p>
+        <div id="category-breakdown"></div>
+        <hr>
+        <h3>Question Review</h3>
+        <div id="question-review"></div>
+        <button onclick="retry()">Retry</button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="Assets/Data/questions.js"></script>
+    <script src="Assets/Scripts/index.js"></script>
+</body>
+
+</html>

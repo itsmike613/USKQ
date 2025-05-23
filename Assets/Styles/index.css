@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap');
+
+body {
+    font-family: "Inter", sans-serif;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.category {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #0A3161;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+.option {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 5px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.selected {
+    background: linear-gradient(to right, #dbeafe, #e0f2fe);
+    border-color: #3b82f6;
+}
+
+.correct {
+    background: linear-gradient(to right, #d1fae5, #dcfce7);
+    border-color: #10b981;
+}
+
+.wrong {
+    background: linear-gradient(to right, #fee2e2, #fef2f2);
+    border-color: #ef4444;
+}
+
+.option img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.info {
+    font-size: 0.85em;
+    color: #444;
+    margin-bottom: 10px;
+}
