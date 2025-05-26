@@ -1,6 +1,6 @@
-const els = {
+const dom = {
     startScreen: document.getElementById("start-screen"),
-    quizScreen: document.getElementById("quiz-screen"),
+    testScreen: document.getElementById("test-screen"),
     resultScreen: document.getElementById("result-screen"),
     questionContainer: document.getElementById("question-container"),
     nextButton: document.getElementById("next-button"),
@@ -13,134 +13,90 @@ const els = {
     reviewNextButton: document.getElementById("review-next-button")
 };
 
-let currentQuestion = 0;
-let currentReviewQuestion = 0;
-let selectedOptions = Array(questions.length).fill(undefined);
+let currentIndex = 0, mode = "test", selectedOptions = Array(questions.length).fill(undefined);
 const categoryScores = {};
+questions.forEach(q => q.correctIndex = q.options.findIndex(o => o.weight === 1));
+
+const generateOptionHTML = (opt, i, selected, correct, mode) => {
+    const isSelected = i === selected, isCorrect = i === correct;
+    const classNames = ['option', isSelected ? 'selected' : '', mode === 'review' && isCorrect ? 'correct' : '', mode === 'review' && isSelected && !isCorrect ? 'wrong' : ''].filter(Boolean).join(' ');
+    return `<div class="${classNames}" data-index="${i}"><img src="${opt.img}" alt="" loading="lazy" /><span>${opt.text}</span></div>${mode === 'review' && opt.info ? `<div class="info">${opt.info}</div>` : ''}`;
+};
 
 const startTest = () => {
-    els.startScreen.classList.add("hidden");
-    els.quizScreen.classList.remove("hidden");
-    renderQuestion();
+    dom.startScreen.classList.add("hidden");
+    dom.testScreen.classList.remove("hidden");
+    mode = "test";
+    render();
 };
 
-const renderQuestion = () => {
-    const q = questions[currentQuestion];
-    const selected = selectedOptions[currentQuestion];
-    els.questionContainer.innerHTML = `
-        <div class="question">
-            <div class="category">Category: ${q.category}</div>
-            <h3>${q.question}</h3>
-        </div>
-        ${q.options.map((opt, i) => `
-            <div class="option ${selected === i ? "selected" : ""}" data-index="${i}">
-                <img src="${opt.img}" alt="" loading="lazy" /><span>${opt.text}</span>
-            </div>
-        `).join('')}
-    `;
-    els.nextButton.disabled = selected === undefined;
-    els.nextButton.textContent = currentQuestion === questions.length - 1 ? "Submit" : "Next";
-    els.backButton.disabled = currentQuestion === 0;
+const render = () => {
+    const q = questions[currentIndex];
+    if (mode === "test") {
+        dom.questionContainer.innerHTML = `<div class="question"><div class="category">Category > ${q.category}</div><h3>${q.question}</h3></div>${q.options.map((opt, i) => generateOptionHTML(opt, i, selectedOptions[currentIndex], null, 'test')).join('')}`;
+    } else {
+        dom.reviewContainer.innerHTML = q.options.map((opt, j) => generateOptionHTML(opt, j, selectedOptions[currentIndex], q.correctIndex, 'review')).join('');
+    }
+    updateButtonStates();
 };
 
-els.questionContainer.addEventListener("click", e => {
+const updateButtonStates = () => {
+    const isFirst = currentIndex === 0, isLast = currentIndex === questions.length - 1;
+    if (mode === "test") {
+        dom.nextButton.disabled = selectedOptions[currentIndex] === undefined;
+        dom.backButton.disabled = isFirst;
+        dom.nextButton.textContent = isLast ? "Submit" : "Next";
+    } else if (mode === "review") {
+        dom.reviewBackButton.disabled = isFirst;
+        dom.reviewNextButton.disabled = isLast;
+    }
+};
+
+const changeIndex = delta => {
+    const newIndex = currentIndex + delta;
+    if (newIndex >= 0 && newIndex < questions.length) {
+        currentIndex = newIndex;
+        render();
+    } else if (mode === "test" && newIndex === questions.length) {
+        showResults();
+    }
+};
+
+dom.questionContainer.addEventListener("click", e => {
     const option = e.target.closest(".option");
-    if (option) {
-        const index = parseInt(option.dataset.index);
-        selectedOptions[currentQuestion] = index;
-        els.questionContainer.querySelectorAll(".option").forEach(opt => opt.classList.remove("selected"));
-        option.classList.add("selected");
-        els.nextButton.disabled = false;
+    if (option && mode === "test") {
+        selectedOptions[currentIndex] = parseInt(option.dataset.index);
+        render();
     }
 });
 
-const nextQuestion = () => {
-    currentQuestion < questions.length - 1 ? (currentQuestion++, renderQuestion()) : showResults();
-};
-
-const prevQuestion = () => {
-    currentQuestion > 0 && (currentQuestion--, renderQuestion());
-};
-
-const prevReviewQuestion = () => {
-    if (currentReviewQuestion > 0) {
-        currentReviewQuestion--;
-        renderReviewQuestion();
-    }
-};
-
-const nextReviewQuestion = () => {
-    if (currentReviewQuestion < questions.length - 1) {
-        currentReviewQuestion++;
-        renderReviewQuestion();
-    }
-};
-
-const renderReviewQuestion = () => {
-    const q = questions[currentReviewQuestion];
-    const selIdx = selectedOptions[currentReviewQuestion];
-    const corrIdx = q.options.findIndex(o => o.weight === 1);
-
-    let html = `
-        <div class="question">
-            <h3>${q.question}</h3>
-        </div>
-    `;
-
-    q.options.forEach((opt, j) => {
-        const isSelected = j === selIdx;
-        const isCorrect = j === corrIdx;
-        const classNames = [
-            'option',
-            isSelected ? 'selected' : '',
-            isCorrect ? 'correct' : '',
-            isSelected && !isCorrect ? 'wrong' : ''
-        ].filter(Boolean).join(' ');
-
-        html += `
-            <div class="${classNames}">
-                <img src="${opt.img}" alt="" loading="lazy" />
-                <span>${opt.text}</span>
-            </div>
-            ${opt.info ? `<div class="info">${opt.info}</div>` : ''}
-        `;
-    });
-
-    els.reviewContainer.innerHTML = html;
-    els.reviewBackButton.disabled = currentReviewQuestion === 0;
-    els.reviewNextButton.disabled = currentReviewQuestion === questions.length - 1;
-};
+dom.nextButton.addEventListener("click", () => changeIndex(1));
+dom.backButton.addEventListener("click", () => changeIndex(-1));
+dom.reviewNextButton.addEventListener("click", () => changeIndex(1));
+dom.reviewBackButton.addEventListener("click", () => changeIndex(-1));
 
 const showResults = () => {
-    els.quizScreen.classList.add("hidden");
-    els.resultScreen.classList.remove("hidden");
-
+    dom.testScreen.classList.add("hidden");
+    dom.resultScreen.classList.remove("hidden");
     questions.forEach((q, i) => {
-        const selIdx = selectedOptions[i];
-        const corrIdx = q.options.findIndex(o => o.weight === 1);
-        const cat = q.category;
+        const selIdx = selectedOptions[i], cat = q.category;
         categoryScores[cat] = categoryScores[cat] || { score: 0, total: 0 };
         categoryScores[cat].score += q.options[selIdx]?.weight || 0;
         categoryScores[cat].total++;
     });
-
-    const categoryPercentages = Object.entries(categoryScores).map(([cat, { score, total }]) => ({
-        cat,
-        pct: (score / total) * 100
-    }));
-    els.categoryBreakdown.innerHTML = categoryPercentages.map(({ cat, pct }) => `<p><strong>${cat}:</strong> ${pct.toFixed(1)}%</p>`).join('');
-    const totalScore = categoryPercentages.reduce((acc, { pct }) => acc + pct, 0);
-    els.uskqScore.textContent = Math.round(totalScore / categoryPercentages.length * 10);
-    currentReviewQuestion = 0;
-    renderReviewQuestion();
+    const categoryPercentages = Object.entries(categoryScores).map(([cat, { score, total }]) => ({ cat, pct: (score / total) * 100 }));
+    dom.categoryBreakdown.innerHTML = categoryPercentages.map(({ cat, pct }) => `<p><strong>${cat}:</strong> ${pct.toFixed(1)}%</p>`).join('');
+    dom.uskqScore.textContent = Math.round(categoryPercentages.reduce((sum, { pct }) => sum + pct, 0) / categoryPercentages.length * 10);
+    mode = "review";
+    currentIndex = 0;
+    render();
 };
 
 const retry = () => {
-    currentQuestion = 0;
+    currentIndex = 0;
     selectedOptions = Array(questions.length).fill(undefined);
     Object.keys(categoryScores).forEach(key => delete categoryScores[key]);
-    currentReviewQuestion = 0;
-    els.reviewContainer.innerHTML = '';
-    els.resultScreen.classList.add("hidden");
-    els.startScreen.classList.remove("hidden");
+    dom.reviewContainer.innerHTML = '';
+    dom.resultScreen.classList.add("hidden");
+    dom.startScreen.classList.remove("hidden");
 };

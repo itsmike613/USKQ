@@ -33,28 +33,28 @@
         <p>Test your knowledge on U.S. history. Earn your USKQ score and see how you perform in different categories.</p>
         <hr>
         <p><strong>About this test:</strong></p>
-        <ul>
-            <li><strong>Categories:</strong> Current Presidency, Political Parties, Education, Slavery, World War 2, World War 1, Civil War, Founding Documents</li>
-            <li><strong>Questions:</strong> 18 (more, coming soon)</li>
-            <li><strong>Estimated Time:</strong> 2–5 minutes</li>
-            <li><strong>Average Score:</strong> ~720 USKQ</li>
+        <ul class="card">
+            <li>📘 <strong>Categories:</strong> Current Presidency, Political Parties, Education, Slavery, World War 2, World War 1, Civil War, Civil Rights Movement, Great Depression, Industrial Revolution, Founding Documents</li>
+            <li>📖 <strong>Questions:</strong> 35</li>
+            <li>🧠 <strong>Average Score:</strong> ~720 USKQ</li>
+            <li>🕣 <strong>Estimated Time:</strong> 2–5 minutes</li>
         </ul>
         <p><strong>How it works:</strong></p>
-        <ul>
-            <li>Click <strong>Start Test</strong> to begin.</li>
-            <li>You must select an option to proceed to the next question.</li>
-            <li>Once submitted, answers are locked. You can retry the test afterward.</li>
-            <li>After submission, you'll see correct answers, explanations, and a detailed category breakdown.</li>
+        <ul class="card">
+            <li>🖱️ Click <strong>Start Test</strong> to begin.</li>
+            <li>⭕ You must select an option to proceed to the next question.</li>
+            <li>🔒 Once submitted, answers are locked. You can retry the test afterward.</li>
+            <li>✅ After submission, you’ll see answers, explanations, and category results.</li>
         </ul>
         <p><strong>Scoring:</strong> Each option has a weight. Closer answers earn partial credit. Final USKQ Score (0–1000) averages your performance across all categories.</p>
 
         <button onclick="startTest()">Start Test</button>
     </div>
 
-    <div id="quiz-screen" class="hidden">
+    <div id="test-screen" class="hidden">
         <div id="question-container"></div>
-        <button id="back-button" onclick="prevQuestion()">Back</button>
-        <button id="next-button" onclick="nextQuestion()" disabled>Next</button>
+        <button id="back-button">Back</button>
+        <button id="next-button" disabled>Next</button>
     </div>
 
     <div id="result-screen" class="hidden">
@@ -64,8 +64,8 @@
         <hr>
         <h3>Question Review</h3>
         <div id="review-container"></div>
-        <button id="review-back-button" onclick="prevReviewQuestion()">Back</button>
-        <button id="review-next-button" onclick="nextReviewQuestion()">Next</button>
+        <button id="review-back-button">Back</button>
+        <button id="review-next-button">Next</button>
         <button onclick="retry()">Retry</button>
     </div>
 
