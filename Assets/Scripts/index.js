@@ -35,7 +35,7 @@ const render = () => {
     if (mode === "test") {
         dom.questionContainer.innerHTML = `<div class="question"><div class="category">Category > ${q.category}</div><h3>${q.question}</h3></div>${q.options.map((opt, i) => generateOptionHTML(opt, i, selectedOptions[currentIndex], null, 'test')).join('')}`;
     } else {
-        dom.reviewContainer.innerHTML = q.options.map((opt, j) => generateOptionHTML(opt, j, selectedOptions[currentIndex], q.correctIndex, 'review')).join('');
+        dom.reviewContainer.innerHTML = `<div class="question"><div class="category">Category > ${q.category}</div><h3>${q.question}</h3></div>${q.options.map((opt, j) => generateOptionHTML(opt, j, selectedOptions[currentIndex], q.correctIndex, 'review')).join('')}`;
     }
     updateButtonStates();
 };
