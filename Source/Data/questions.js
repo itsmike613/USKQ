@@ -463,7 +463,7 @@ const questions = [
                 text: "Rosa Parks",
                 weight: 0,
                 info: "Known for her role in the Montgomery Bus Boycott, not for this speech.",
-                img: "https://upload.wikimedia.org/wikipedia/en/1/17/Rosa_Parks_Portrait%2C_1955.jpg"
+                img: "https://upload.wikimedia.org/wikipedia/fy/1/17/Rosa_Parks_Portrait%2C_1955.jpg"
             },
             {
                 text: "Martin Luther King Jr.",
@@ -830,7 +830,7 @@ const questions = [
                 text: "Canals",
                 weight: 0,
                 info: "Canals were important but were overshadowed by railroads for speed and reach.",
-                img: "https://westernliner.com/wp-content/uploads/2025/02/WesternEnvironmentalLiner-341497-Irrigation-Canals-Agriculture-blogbanner1.jpg"
+                img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Mittellandkanal_near_minden_germany.jpg/330px-Mittellandkanal_near_minden_germany.jpg"
             },
             {
                 text: "Airplanes",
@@ -1093,7 +1093,7 @@ const questions = [
             {
                 text: "1792",
                 weight: 1.0,
-                info: "Correct! The Coinage Act of 1792 established the U.S. dollar as the official currency.",
+                info: "The Coinage Act of 1792 established the U.S. dollar as the official currency.",
                 img: "https://placehold.co/1?text=1792"
             },
             {
@@ -1207,7 +1207,7 @@ const questions = [
             {
                 text: "$500 bill",
                 weight: 1.0,
-                info: "Correct! The $500 bill was discontinued and removed in 1969.",
+                info: "The $500 bill was discontinued and removed in 1969.",
                 img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/500_bill_front.jpg/330px-500_bill_front.jpg"
             },
             {
@@ -1333,7 +1333,7 @@ const questions = [
             {
                 text: "Federal Reserve",
                 weight: 1.0,
-                info: "Correct! The Federal Reserve issues U.S. paper currency.",
+                info: "The Federal Reserve issues U.S. paper currency.",
                 img: "https://logodownload.org/wp-content/uploads/2021/06/federal-reserve-logo-fed.png"
             },
             {
