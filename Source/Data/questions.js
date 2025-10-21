@@ -1049,5 +1049,305 @@ const questions = [
                 img: "https://theleventhalfirm.com/wp-content/uploads/2017/01/fourthamendment.jpg"
             }
         ]
+    },
+    {
+        category: "Currency",
+        question: "What is the official currency of the United States?",
+        options: [
+            {
+                text: "Euro",
+                weight: 0,
+                info: "The Euro is the official currency of many European countries.",
+                img: "https://cdn.britannica.com/89/94789-050-B4F060D8/coin.jpg"
+            },
+            {
+                text: "U.S. Dollar",
+                weight: 1.0,
+                info: "The U.S. Dollar is the official currency of the United States.",
+                img: "https://img.freepik.com/free-photo/american-dollar-bills_1101-1.jpg"
+            },
+            {
+                text: "British Pound",
+                weight: 0,
+                info: "The British Pound is the currency of the United Kingdom.",
+                img: "https://upload.wikimedia.org/wikipedia/en/c/c0/British_12_sided_pound_coin.png"
+            },
+            {
+                text: "Japanese Yen",
+                weight: 0,
+                info: "The Yen is the currency of Japan.",
+                img: "https://alljapantours.com/php17/interfaceMaster/blogMaster/img17/photo/blog/src/BGQW191133180.jpg"
+            }
+        ]
+    },
+    {
+        category: "Currency",
+        question: "When was the U.S. dollar first established as the official currency?",
+        options: [
+            {
+                text: "1776",
+                weight: 0.2,
+                info: "1776 is the year of U.S. independence but not when the dollar was officially established.",
+                img: "https://placehold.co/1?text=1776"
+            },
+            {
+                text: "1792",
+                weight: 1.0,
+                info: "Correct! The Coinage Act of 1792 established the U.S. dollar as the official currency.",
+                img: "https://placehold.co/1?text=1792"
+            },
+            {
+                text: "1865",
+                weight: 0.1,
+                info: "1865 marks the end of the Civil War, not official dollar establishment.",
+                img: "https://placehold.co/1?text=1865"
+            },
+            {
+                text: "1913",
+                weight: 0,
+                info: "1913 is the year the Federal Reserve was created, not the dollar establishment.",
+                img: "https://placehold.co/1?text=1913"
+            }
+        ]
+    },
+    {
+        category: "Currency",
+        question: "What act established the U.S. dollar and regulated coinage in 1792?",
+        options: [
+            {
+                text: "Currency Act",
+                weight: 0.1,
+                info: "Close, but the specific name is the Coinage Act of 1792.",
+                img: "https://lirp.cdn-website.com/ec7d6ddb/dms3rep/multi/opt/AdobeStock_243951408+thumb-befa8b28-640w.jpeg"
+            },
+            {
+                text: "Federal Reserve Act",
+                weight: 0,
+                info: "The Federal Reserve Act was passed in 1913, long after the dollar was established.",
+                img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Fed_Reserve.JPG/250px-Fed_Reserve.JPG"
+            },
+            {
+                text: "Coinage Act",
+                weight: 1.0,
+                info: "The Coinage Act of 1792 created the U.S. dollar and regulated coinage.",
+                img: "https://library.washu.edu/wp-content/uploads/2024/12/WashULibraries_Exhibitions_ForgingANation_Heading-1792MintAct.jpg"
+            },
+            {
+                text: "Gold Standard Act",
+                weight: 0,
+                info: "The Gold Standard was adopted later, not by this act.",
+                img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/US-%24100-GC-1882-Fr.1207.jpg/250px-US-%24100-GC-1882-Fr.1207.jpg"
+            }
+        ]
+    },
+    {
+        category: "Currency",
+        question: "What metal standard did the U.S. adopt in the late 19th century for its currency?",
+        options: [
+            {
+                text: "Gold Standard",
+                weight: 1.0,
+                info: "The Gold Standard dominated U.S. currency in the late 1800s.",
+                img: "https://www.usmoneyreserve.com/wp-content/uploads/2018/07/gold-bar-1oz_800-300x300.jpg"
+            },
+            {
+                text: "Silver Standard",
+                weight: 0.3,
+                info: "Silver was used but the primary standard was gold after the Gold Standard Act.",
+                img: "https://www.usmoneyreserve.com/wp-content/uploads/2018/07/silver-bar-updated_800.jpg"
+            },
+            {
+                text: "Copper Standard",
+                weight: 0,
+                info: "Copper was used mainly for minor coins, not as the currency standard.",
+                img: "https://cdn.providentmetals.com/wp-content/uploads/2019/12/PID175632-IMG-8606.jpg"
+            },
+            {
+                text: "Platinum Standard",
+                weight: 0,
+                info: "There was no platinum standard in U.S. currency history.",
+                img: "https://www.monex.com/wp-content/uploads/platinum-featured.jpg"
+            }
+        ]
+    },
+    {
+        category: "Currency",
+        question: "When was the Federal Reserve System created to regulate U.S. currency?",
+        options: [
+            {
+                text: "1870",
+                weight: 0,
+                info: "The Federal Reserve did not exist in 1870.",
+                img: "https://placehold.co/1?text=1870"
+            },
+            {
+                text: "1900",
+                weight: 0.1,
+                info: "The Federal Reserve was created a bit later, in 1913.",
+                img: "https://placehold.co/1?text=1900"
+            },
+            {
+                text: "1913",
+                weight: 1.0,
+                info: "The Federal Reserve System was established in 1913.",
+                img: "https://placehold.co/1?text=1913"
+            },
+            {
+                text: "1933",
+                weight: 0.2,
+                info: "1933 was a key year during the Great Depression but not the Fed’s creation.",
+                img: "https://placehold.co/1?text=1933"
+            }
+        ]
+    },
+    {
+        category: "Currency",
+        question: "Which currency note was discontinued by the Federal Reserve and quickly removed from circulation in 1969?",
+        options: [
+            {
+                text: "$500 bill",
+                weight: 1.0,
+                info: "Correct! The $500 bill was discontinued and removed in 1969.",
+                img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/500_bill_front.jpg/330px-500_bill_front.jpg"
+            },
+            {
+                text: "$50 bill",
+                weight: 0,
+                info: "The $50 bill is still in circulation today.",
+                img: "https://moya.bus.miami.edu/~dkelly/teach/eco403/1999_50f.jpg"
+            },
+            {
+                text: "$100000 bill",
+                weight: 0.1,
+                info: "The $100,000 bill was never issued as a Federal Reserve Note. It was only issued in the form of a gold certificate.",
+                img: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Fake_currency-1000_dollar_bill.jpg"
+            },
+            {
+                text: "$100 bill",
+                weight: 0,
+                info: "The $100 bill remains in circulation as the highest denomination for public use.",
+                img: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Obverse_of_the_series_2009_%24100_Federal_Reserve_Note.jpg"
+            }
+        ]
+    },
+    {
+        category: "Currency",
+        question: "When did the U.S. officially abandon the gold standard for currency?",
+        options: [
+            {
+                text: "1933",
+                weight: 0.4,
+                info: "1933 marked restrictions on gold ownership but not full abandonment.",
+                img: "https://placehold.co/1?text=1933"
+            },
+            {
+                text: "1971",
+                weight: 1.0,
+                info: "President Nixon ended the gold standard in 1971.",
+                img: "https://placehold.co/1?text=1971"
+            },
+            {
+                text: "1985",
+                weight: 0.1,
+                info: "1985 is much later than the actual end of the gold standard.",
+                img: "https://placehold.co/1?text=1985"
+            },
+            {
+                text: "2000",
+                weight: 0,
+                info: "The gold standard ended decades before 2000.",
+                img: "https://placehold.co/1?text=2000"
+            }
+        ]
+    },
+    {
+        category: "Currency",
+        question: "What major change was made to U.S. currency designs starting in 1996 to prevent counterfeiting?",
+        options: [
+            {
+                text: "Plastic bills",
+                weight: 0,
+                info: "U.S. currency is still paper-based, not plastic.",
+                img: "https://i.ebayimg.com/images/g/fDYAAOSwhi9jFqGV/s-l1200.jpg"
+            },
+            {
+                text: "Watermarks and color shifting ink",
+                weight: 1.0,
+                info: "These features were introduced beginning in 1996 to enhance security.",
+                img: "https://www.uscurrency.gov/sites/default/files/denominations/fifty2004_colorshiftink.jpg"
+            },
+            {
+                text: "Laser engraving",
+                weight: 0,
+                info: "This technology is not used on U.S. paper currency designs.",
+                img: "https://www.inlandproducts.com/wp-content/uploads/2022/01/laser-engraving-etching.jpg"
+            },
+            {
+                text: "Larger bills",
+                weight: 0.1,
+                info: "Bill sizes remained the same; only design and security features changed.",
+                img: "https://oldestatecoins.com/cdn/shop/products/IMG_9718_1024x1024.jpg?v=1586518282"
+            }
+        ]
+    },
+    {
+        category: "Currency",
+        question: "As of 2025, what is the highest denomination of U.S. currency currently printed for public use?",
+        options: [
+            {
+                text: "$100",
+                weight: 1.0,
+                info: "The $100 bill is the highest denomination currently printed for public circulation.",
+                img: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Obverse_of_the_series_2009_%24100_Federal_Reserve_Note.jpg"
+            },
+            {
+                text: "$500",
+                weight: 0,
+                info: "The $500 bill was discontinued decades ago and is no longer printed.",
+                img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/500_bill_front.jpg/330px-500_bill_front.jpg"
+            },
+            {
+                text: "$1000",
+                weight: 0,
+                info: "The $1000 bill is no longer printed or circulated publicly.",
+                img: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Fake_currency-1000_dollar_bill.jpg"
+            },
+            {
+                text: "$50",
+                weight: 0,
+                info: "The $50 bill remains in use but is not the highest denomination.",
+                img: "https://moya.bus.miami.edu/~dkelly/teach/eco403/1999_50f.jpg"
+            }
+        ]
+    },
+    {
+        category: "Currency",
+        question: "Which institution is responsible for issuing the paper currency in the United States?",
+        options: [
+            {
+                text: "Department of Treasury",
+                weight: 0.1,
+                info: "The Treasury manages finances, but issuance is controlled by the Federal Reserve.",
+                img: "https://theamericanleader.org/wp-content/uploads/2025/01/treasury-logo2.png"
+            },
+            {
+                text: "Federal Reserve",
+                weight: 1.0,
+                info: "Correct! The Federal Reserve issues U.S. paper currency.",
+                img: "https://logodownload.org/wp-content/uploads/2021/06/federal-reserve-logo-fed.png"
+            },
+            {
+                text: "U.S. Mint",
+                weight: 0.2,
+                info: "The U.S. Mint produces coins, not paper currency.",
+                img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Seal_of_the_United_States_Mint.svg/1200px-Seal_of_the_United_States_Mint.svg.png"
+            },
+            {
+                text: "Congress",
+                weight: 0,
+                info: "Congress legislates but does not issue currency directly.",
+                img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Seal_of_the_United_States_Congress.svg/1200px-Seal_of_the_United_States_Congress.svg.png"
+            }
+        ]
     }
 ];
