@@ -4,19 +4,19 @@ const questions = [
         question: "Who is the current U.S. President (2025)?",
         options: [
             {
-                text: "Joe Biden",
+                text: "Joe R. Biden",
                 weight: 0.1,
                 info: "Former President, not current.",
                 img: "https://www.loc.gov/static/portals/free-to-use/public-domain/presidential-portraits/46-joe-biden.png"
             },
             {
-                text: "Donald Trump",
+                text: "Donald J. Trump",
                 weight: 1.0,
                 info: "Current president of the United States of America.",
                 img: "https://www.whitehouse.gov/wp-content/uploads/2025/01/Donald-J-Trump.jpg"
             },
             {
-                text: "Barack Obama",
+                text: "Barack H. Obama",
                 weight: 0,
                 info: "Served from 2009 to 2017.",
                 img: "https://www.loc.gov/static/portals/free-to-use/public-domain/presidential-portraits/44-obama.jpg"
@@ -61,32 +61,32 @@ const questions = [
     },
     {
         category: "Current Presidency",
-        question: "What historical precedent was set by Donald Trump’s election as the 47th president in 2024?",
+        question: "What is unique about Donald J. Trump’s 2025 term?",
         options: [
-            {
-                text: "First president to serve three terms",
-                weight: 0,
-                info: "No president has served three terms due to the 22nd Amendment.",
-                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0xPSshwVEaih12D3abxFppvZR9I7Nm9AUwQ&s"
-            },
-            {
-                text: "Second president to serve non-consecutive terms",
-                weight: 1.0,
-                info: "Trump, like Grover Cleveland, was elected to non-consecutive terms (45th and 47th president).",
-                img: "https://d1y822qhq55g6.cloudfront.net/fotoweb/2023/11/db142cfa638846d88c071c9d48392c38.jpg"
-            },
-            {
-                text: "First president elected after a felony conviction",
-                weight: 0.1,
-                info: "Trump was convicted in 2024 but faced no penalty upon election.",
-                img: "https://static01.nyt.com/images/2024/05/09/multimedia/03evening-nl-trump-court/03evening-nl-trump-court-articleLarge.jpg?quality=75&auto=webp&disable=upscale"
-            },
-            {
-                text: "Youngest president elected",
-                weight: 0,
-                info: "At 78, Trump is the oldest president elected, not the youngest.",
-                img: "https://www.whitehouse.gov/wp-content/uploads/2025/01/Donald-J-Trump.jpg"
-            }
+            { text: "First president to serve three terms", weight: 0, info: "Not possible due to the 22nd Amendment.", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0xPSshwVEaih12D3abxFppvZR9I7Nm9AUwQ&s" },
+            { text: "Oldest president ever inaugurated", weight: 1.0, info: "Trump was 78 at his 2025 inauguration.", img: "https://www.whitehouse.gov/wp-content/uploads/2025/01/Donald-J-Trump.jpg" },
+            { text: "First president born in the 1980s", weight: 0, info: "Trump was born in 1946.", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Jimmy_Carter_Official_Portrait2_%283x4_cropped%29.jpg/960px-Jimmy_Carter_Official_Portrait2_%283x4_cropped%29.jpg" },
+            { text: "First female president", weight: 0, info: "Trump is male.", img: "https://bidenwhitehouse.archives.gov/wp-content/uploads/2025/01/harris-profile-21.png" }
+        ]
+    },
+    {
+        category: "Current Presidency",
+        question: "Donald J. Trump was the second U.S. president to do what?",
+        options: [
+            { text: "Win two consecutive terms", weight: 0, info: "Many presidents have done this.", img: "https://www.loc.gov/static/portals/free-to-use/public-domain/presidential-portraits/44-obama.jpg" },
+            { text: "Lose the popular vote but win the presidency", weight: 0, info: "Occurred more than twice in U.S. history.", img: "https://images.axios.com/_ZWnRTI9jBCSSyjc1PuVa_2lms8=/1920x1920/smart/2024/11/06/1730920668409.png" },
+            { text: "Serve non-consecutive terms", weight: 1.0, info: "After Grover Cleveland.", img: "https://d1y822qhq55g6.cloudfront.net/fotoweb/2023/11/db142cfa638846d88c071c9d48392c38.jpg" },
+            { text: "Be impeached twice", weight: 0, info: "He was impeached twice, but not the only precedent for this question.", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYWItqccoQ_VfOFc5lc3eTN3GGNoo6c3CpaQ&s" }
+        ]
+    },
+    {
+        category: "Current Presidency",
+        question: "When was Donald J. Trump inaugurated as the 47th president?",
+        options: [
+            { text: "January 20, 2021", weight: 0, info: "Biden was inaugurated that day.", img: "https://placehold.co/1?text=2021" },
+            { text: "November 8, 2024", weight: 0, info: "That is Election Day, not Inauguration Day.", img: "https://placehold.co/1?text=2024" },
+            { text: "July 4, 2023", weight: 0, info: "That was Independence Day, not Inauguration Day.", img: "https://placehold.co/1?text=2023" },
+            { text: "January 20, 2025", weight: 1.0, info: "Trump’s second inauguration.", img: "https://placehold.co/1?text=2025" }
         ]
     },
     {
@@ -120,13 +120,23 @@ const questions = [
         ]
     },
     {
+        category: "Political Parties",
+        question: "Which U.S. party was founded in opposition to the expansion of slavery?",
+        options: [
+            { text: "Democratic Party", weight: 0, info: "Had a different foundation.", img: "https://democrats.org/wp-content/uploads/2024/09/DEMS_d66355.png" },
+            { text: "Republican Party", weight: 1.0, info: "Founded in 1854 by anti-slavery activists.", img: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQeyyZ0W3EmKt9fNQ6MH0gPaZvjsLTJvHikCru6W4thOJTUIeRL" },
+            { text: "Green Party", weight: 0, info: "Founded much later.", img: "https://pbs.twimg.com/profile_images/1100960907012784128/vU5bJZvR_400x400.png" },
+            { text: "Reform Party", weight: 0, info: "Founded in the 1990s.", img: "https://reformparty.org/wp-content/uploads/2024/10/RP-logo-2024-371x328px.jpg" }
+        ]
+    },
+    {
         category: "Education",
-        question: "Which of these is the oldest institution of higher learning in the United States?",
+        question: "Which of these is the oldest institution of higher learning in the U.S?",
         options: [
             {
                 text: "Harvard University",
                 weight: 1.0,
-                info: "Harvard University is the oldest institution of higher learning in the United States (founded 1636) and one of the nation’s most prestigious. It is one of the Ivy League schools.",
+                info: "Harvard University is the oldest institution of higher learning in the U.S (founded 1636) and one of the nation’s most prestigious. It is one of the Ivy League schools.",
                 img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Harvard_University_coat_of_arms.svg/1200px-Harvard_University_coat_of_arms.svg.png"
             },
             {
@@ -151,7 +161,7 @@ const questions = [
     },
     {
         category: "World War 2",
-        question: "What year did the United States enter World War 2?",
+        question: "What year did the U.S enter World War 2?",
         options: [
             {
                 text: "1939",
@@ -181,7 +191,7 @@ const questions = [
     },
     {
         category: "World War 2",
-        question: "What event led the United States to enter World War II?",
+        question: "What event led the U.S to enter World War II?",
         options: [
             {
                 text: "Attack on Pearl Harbor",
@@ -331,7 +341,7 @@ const questions = [
     },
     {
         category: "World War 1",
-        question: "How did World War 1 affect women in the United States?",
+        question: "How did World War 1 affect women in the U.S?",
         options: [
             {
                 text: "It expanded their roles in the workforce",
@@ -572,7 +582,7 @@ const questions = [
     },
     {
         category: "Slavery",
-        question: "Which industry benefited the most from slavery in the United States?",
+        question: "Which industry benefited the most from slavery in the U.S?",
         options: [
             {
                 text: "Tobacco",
@@ -650,11 +660,11 @@ const questions = [
                 text: "A Confederate supply line",
                 weight: 0,
                 info: "It had no connection to the Confederacy.",
-                img: "https://www.battlefields.org/sites/default/files/styles/wysiwyg_original/public/thumbnails/image/reams-station-illustration_0_0.jpg"
+                img: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Railroad_of_Confederacy-1861.jpg/1200px-Railroad_of_Confederacy-1861.jpg"
             },
             {
                 text: "A protest route during the Civil War",
-                weight: 0.2,
+                weight: 0.1,
                 info: "It existed before the Civil War and focused on escape.",
                 img: "https://res.cloudinary.com/aenetworks/image/upload/c_fill,ar_2,w_3840,h_1920,g_auto/dpr_auto/f_auto/q_auto:eco/v1/civil-war-gettyimages-3427284?_a=BAVAZGDX0"
             }
@@ -666,7 +676,7 @@ const questions = [
         options: [
             {
                 text: "1933",
-                weight: 0.2,
+                weight: 0.1,
                 info: "This year saw the peak of the Depression and major government responses, not the crash itself.",
                 img: "https://placehold.co/1?text=1933"
             },
@@ -902,7 +912,7 @@ const questions = [
     },
     {
         category: "Founding Documents",
-        question: "What is the supreme law of the United States?",
+        question: "What is the supreme law of the U.S?",
         options: [
             {
                 text: "Declaration of Independence",
@@ -962,7 +972,7 @@ const questions = [
     },
     {
         category: "Founding Documents",
-        question: "Which document served as the first constitution of the United States?",
+        question: "Which document served as the first constitution of the U.S?",
         options: [
             {
                 text: "U.S. Constitution",
@@ -1052,7 +1062,7 @@ const questions = [
     },
     {
         category: "Currency",
-        question: "What is the official currency of the United States?",
+        question: "What is the official currency of the U.S?",
         options: [
             {
                 text: "Euro",
@@ -1322,7 +1332,7 @@ const questions = [
     },
     {
         category: "Currency",
-        question: "Which institution is responsible for issuing the paper currency in the United States?",
+        question: "Which institution is responsible for issuing the paper currency in the U.S?",
         options: [
             {
                 text: "Department of Treasury",
@@ -1348,6 +1358,56 @@ const questions = [
                 info: "Congress legislates but does not issue currency directly.",
                 img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Seal_of_the_United_States_Congress.svg/1200px-Seal_of_the_United_States_Congress.svg.png"
             }
+        ]
+    },
+    {
+        category: "Presidential Assassinations",
+        question: "Which U.S. president survived an assassination attempt in Pennsylvania in 2024?",
+        options: [
+            { text: "Joe Biden", weight: 0, info: "Has not experienced a public assassination attempt.", img: "https://www.loc.gov/static/portals/free-to-use/public-domain/presidential-portraits/46-joe-biden.png" },
+            { text: "John F. Kennedy", weight: 0, info: "Was assassinated in Dallas, not Pennsylvania.", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/John_F._Kennedy%2C_White_House_color_photo_portrait.jpg/960px-John_F._Kennedy%2C_White_House_color_photo_portrait.jpg" },
+            { text: "Donald Trump", weight: 1.0, info: "Grazed by a bullet during a campaign rally in Butler.", img: "https://www.whitehouse.gov/wp-content/uploads/2025/01/Donald-J-Trump.jpg" },
+            { text: "Ronald Reagan", weight: 0, info: "Survived a 1981 attempt in Washington, D.C.", img: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRBdLqLCVPo70U-DS8fMPQcc1oOLzMXQf-I_Rk-JkzRA_8t3xcbpIFcM0vT_ObkYWX5O2M4UNSpdbTcYG6eIpHy3bDS9ysUWPEgrpzRfXU" }
+        ]
+    },
+    {
+        category: "Presidential Assassinations",
+        question: "Who killed President Abraham Lincoln?",
+        options: [
+            { text: "John Wilkes Booth", weight: 1.0, info: "Shot Lincoln at Ford’s Theatre in 1865.", img: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSTN0HtkBuQvLB69lLYIG-N-LHEtgmilI023bkfr1rDG79W8aRbeiDrux97Dkyx2m89boZFfz46V2IaiJcE9DgVgpxiPtvTybFCad2AmQ" },
+            { text: "Charles Guiteau", weight: 0, info: "Assassinated Garfield.", img: "https://3.bp.blogspot.com/-uGh7DEKRWgs/UzsOai6TRrI/AAAAAAAAB9s/1803syd-UiE/s1600/Charles-Julius-Guiteau-235814-2-402.jpg" },
+            { text: "Leon Czolgosz", weight: 0, info: "Assassinated McKinley.", img: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Leon_Czolgosz_ca_1900.jpg" },
+            { text: "Lee Harvey Oswald", weight: 0, info: "Assassinated Kennedy.", img: "https://www.tshaonline.org/images/handbook/entries/OO/oswald-lee.jpg" }
+        ]
+    },
+    {
+        category: "Presidential Assassinations",
+        question: "Which president was shot and died of his wounds months later?",
+        options: [
+            { text: "John F. Kennedy", weight: 0, info: "Died instantly in 1963.", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/John_F._Kennedy%2C_White_House_color_photo_portrait.jpg/960px-John_F._Kennedy%2C_White_House_color_photo_portrait.jpg" },
+            { text: "James Garfield", weight: 1.0, info: "Shot in 1881; died after 79 days.", img: "https://upload.wikimedia.org/wikipedia/commons/1/1f/James_Abram_Garfield%2C_photo_portrait_seated.jpg" },
+            { text: "Abraham Lincoln", weight: 0, info: "Died the next morning in 1865.", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Abraham_Lincoln_1863_Portrait_%283x4_cropped%29.jpg/960px-Abraham_Lincoln_1863_Portrait_%283x4_cropped%29.jpg" },
+            { text: "William McKinley", weight: 0, info: "Died about a week after being shot.", img: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSlma4pVYo9AfvgsZJ4tPFPNTL-WevBAUYFnLJgDV9pJMcpgW4KBa25vkDi7XaRmvmsAsqccK1_F0Iwal9mpgl204WR63FJVPrAQPN0cSY" }
+        ]
+    },
+    {
+        category: "Presidential Assassinations",
+        question: "Which president was assassinated in Dallas, Texas?",
+        options: [
+            { text: "John F. Kennedy", weight: 1.0, info: "Killed on November 22, 1963, by Lee Harvey Oswald.", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/John_F._Kennedy%2C_White_House_color_photo_portrait.jpg/960px-John_F._Kennedy%2C_White_House_color_photo_portrait.jpg" },
+            { text: "Abraham Lincoln", weight: 0, info: "Killed in Washington, D.C.", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Abraham_Lincoln_1863_Portrait_%283x4_cropped%29.jpg/960px-Abraham_Lincoln_1863_Portrait_%283x4_cropped%29.jpg" },
+            { text: "William McKinley", weight: 0, info: "Killed in Buffalo, NY.", img: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSlma4pVYo9AfvgsZJ4tPFPNTL-WevBAUYFnLJgDV9pJMcpgW4KBa25vkDi7XaRmvmsAsqccK1_F0Iwal9mpgl204WR63FJVPrAQPN0cSY" },
+            { text: "James Garfield", weight: 0, info: "Killed in Washington, D.C.", img: "https://upload.wikimedia.org/wikipedia/commons/1/1f/James_Abram_Garfield%2C_photo_portrait_seated.jpg" }
+        ]
+    },
+    {
+        category: "Presidential Assassinations",
+        question: "Which president survived a near-fatal shooting and returned to work just weeks later?",
+        options: [
+            { text: "Andrew Jackson", weight: 0, info: "Survived an 1835 attempt; gun misfired.", img: "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTA36_CPy6SArz4mGXwbMEz5enEwkBPfZLnqXEA69fPvLstWyS2Plg6UB7io5uzZEkDC9cq2RH9X-_OxVQ" },
+            { text: "Theodore Roosevelt", weight: 0, info: "Shot in 1912 while campaigning; survived.", img: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTToY6BqAaTtN3siWMN22lzxv4tIXlr0l35S22JJRsvA2JQkVnTpUCrVAMPin5DRckrL2J-6zn0W1UoFRVybRuQCanwtxaPxtVHEKEncSA" },
+            { text: "Donald Trump", weight: 0, info: "Grazed in 2024 but not incumbent at the time.", img: "https://www.whitehouse.gov/wp-content/uploads/2025/01/Donald-J-Trump.jpg" },
+            { text: "Ronald Reagan", weight: 1.0, info: "Shot and wounded in 1981 but survived.", img: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRBdLqLCVPo70U-DS8fMPQcc1oOLzMXQf-I_Rk-JkzRA_8t3xcbpIFcM0vT_ObkYWX5O2M4UNSpdbTcYG6eIpHy3bDS9ysUWPEgrpzRfXU" }
         ]
     }
 ];
